@@ -1,0 +1,25 @@
+how to drop a column from table
+
+alter table student Drop age;
+
+drop table student;
+
+(Primary key)
+  id   name    age
+  1    smith    30
+  2   Jhone    23
+  40   Karan    30
+
+update student set name='Jhon' where id=1; 
+commit;
+
+delete from student where id in(40,1,2);
+
+rollback;
+
+drop database library;
+
+truncate table student;    //  auto commit so we can not rollback
+
+desc student;
+

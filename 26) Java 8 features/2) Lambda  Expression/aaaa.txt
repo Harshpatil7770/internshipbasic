@@ -1,0 +1,123 @@
+1) FunctionInterface
+In java 1.8 added new feature i.e Function Interface.
+Function Interface means it has only one abstract method.
+Function Interface are introduced in iterable and stream Interface.
+
+why they provide FunctionInterface?
+In FunctionInterface they provide one annotation i.e @FunctionInterface
+when we use this annoatation we are not able to add more than one method.
+If you try to add it will show compile time errror.
+@FunctionalInterface
+interface Bike
+{
+void run();
+}
+class Honda implements Bike
+{
+public void run()
+{
+System.out.println("Running....");
+}
+public static void main(String args[])
+{
+Honda a1=new Honda();
+a1.run();
+}
+}
+
+
+
+
+2) default Method and static method
+In java 1.8 added new feature i.e default method
+In java 1.7 we have only method declaration inside the interface and we want to add new method it must implemenet in all subclasses,which is not neccesary for us.
+so avoid this type of this default method introduced in an interface.
+we can add default and static method inside the interface.
+and which class want to access it just write the interfacename.super.methodname(); call it.
+
+for ex1)
+F
+interface Bike
+{
+default void run()
+{
+System.out.println("Running...."):
+}
+}
+class Honda implements Bike
+{
+public void run()
+{
+Bike.super.run();
+System.out.println("Running safely within speed limit 60km/hr");
+}
+}
+class Test
+{
+public static void main(String args[])
+{
+Honda a1=ne Honda();
+a1.run();
+}
+}
+
+for ex2)
+interface Animal
+{
+deafault void eat()
+{
+System.out.println("Eating...");
+}
+static void show()
+{
+System.out.println("In interface deafult and static method added in java 1.8");
+}
+}
+class Dog implements Animal
+{
+public void eat()
+{
+System.out.println("The Dog was finished their meal");
+}
+}
+class Cat implements Animal
+{
+public void eat()
+{
+Animal.super.eat();
+System.out.println("Drinking...");
+}
+}
+class Test
+{
+public static void main(String args[])
+{
+Dog d1=new Dog();
+d1.eat();
+Cat c1=new Cat();
+c1.eat();
+}
+}
+
+3) StreamAPI
+
+stream means does not store the element. stream means flow the element from source to destination.
+In stream element are visited only once in their life. 
+We can use stream with filter,collect,printing for transfering one from of data structure to another.
+
+for eg1)
+import java.util.stream.Collectors;
+import java.util.*;
+class StreamAPI
+{
+public static void main(String args[])
+{
+List<Integer> list =Arrays.asList(10,20,25,85,74,96,63,41,25,36);
+List<Integer> Even=list.stream().filter((e)-> e%2==0).collect(Collectors.toList());
+System.out.println(Even);
+}
+}
+
+4) Lambda expression
+
+lambda expression is used to implemenatation of 

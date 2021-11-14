@@ -1,0 +1,31 @@
+class Bank
+{
+float getRateofInterest()
+{
+return 9.5.f;
+}
+}
+class SBI extends Bank
+{
+float getRateofInterest()
+{
+return 9.5.f;
+}
+}
+class HDFC extends Bank
+{
+float getRateofInterest()
+{
+return 9.5.f;
+}
+}
+class Test
+{
+public static void main(String args[])
+{ 
+HDFC a1=new HDFC();
+System.out.println(a.getRateofInterest());
+SBI a2=new SBI();
+System.out.println("a2.getRateofInterest()); 
+}
+}
